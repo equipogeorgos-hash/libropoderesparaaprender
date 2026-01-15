@@ -8,14 +8,15 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
-        /* Sombra especial para que la portada grande tenga profundidad */
         .book-shadow { 
-            box-shadow: 25px 25px 50px rgba(0,0,0,0.4), -5px -5px 15px rgba(255,255,255,0.1);
+            box-shadow: 25px 25px 50px rgba(0,0,0,0.4);
             border-radius: 8px;
         }
         .keyword-btn { transition: all 0.3s ease; border: 1px solid #3b82f6; cursor: pointer; }
         .keyword-btn:hover { background-color: #3b82f6; color: white; }
-        #info-box { transition: all 0.5s ease; display: none; min-height: 120px; }
+        #info-box { transition: all 0.5s ease; display: none; }
+        .feature-card { transition: transform 0.3s ease; }
+        .feature-card:hover { transform: translateY(-10px); }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
@@ -24,68 +25,86 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-2xl font-bold text-blue-700 italic">P.P.A.</span>
             <div class="space-x-6 font-medium">
+                <a href="#descubrir" class="hover:text-blue-600 transition">Contenido</a>
                 <a href="#etimologia" class="hover:text-blue-600 transition">Historia</a>
-                <a href="#autor" class="hover:text-blue-600 transition">Autor</a>
                 <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contacto</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient text-white py-12 md:py-20">
+    <header class="hero-gradient text-white py-16">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            
             <div class="md:w-1/2">
-                <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
+                <h1 class="text-5xl font-extrabold leading-tight mb-6">
                     Poderes Para Aprender: <br><span class="text-blue-200">Gimnasia para tu Cerebro</span>
                 </h1>
-                <p class="text-xl mb-8 opacity-90 italic leading-relaxed">
-                    "Un manual de buenas intenciones para intentar ser más eficiente en el aprendizaje."
-                </p>
+                <p class="text-xl mb-6 opacity-90 italic">"Un manual de buenas intenciones para ser más eficiente en el aprendizaje."</p>
                 
-                <p class="text-sm mb-4 uppercase tracking-widest text-blue-200 font-bold">Conceptos clave (pulsa para leer):</p>
                 <div class="flex flex-wrap gap-3 mb-8">
-                    <button onclick="showInfo('Efectos', 'El concepto efecto es una herramienta para mejorar y una palanca para aprender. Los 6 efectos son: 1. Concierto, 2. Cine, 3. Periodista, 4. Tiempo, 5. Tonto y 6. Desayuno.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Efectos</button>
-                    <button onclick="showInfo('Guía', 'Un mapa detallado para navegar con éxito en la era de la información.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Guía</button>
-                    <button onclick="showInfo('Intención', 'Aprender no es casualidad; requiere el propósito firme de mejorar cada día.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Intención</button>
-                    <button onclick="showInfo('Eficiencia', 'La capacidad de lograr resultados máximos optimizando tu recurso más valioso: el tiempo.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Eficiencia</button>
-                    <button onclick="showInfo('Innato', 'El deseo natural de entender el mundo que nos impulsa desde el nacimiento.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Innato</button>
+                    <button onclick="showInfo('Efectos', 'Herramienta para mejorar y palanca para aprender. Los 6 efectos son: 1. Concierto, 2. Cine, 3. Periodista, 4. Tiempo, 5. Tonto y 6. Desayuno.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Efectos</button>
+                    <button onclick="showInfo('Tetralogía', 'Esta obra inaugura una serie de cuatro libros dedicados a transformar la educación mediante veinte efectos clave.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">Tetralogía</button>
+                    <button onclick="showInfo('IA y Humano', 'No se trata de competir con la IA, sino de estar preparados para aprovecharla al máximo desarrollando una inteligencia ágil.')" class="keyword-btn px-4 py-2 rounded-full bg-white text-blue-700 text-sm font-bold shadow-md">IA y Humano</button>
                 </div>
 
-                <div id="info-box" class="bg-blue-900/40 p-6 rounded-xl border border-blue-300/30 mb-4 shadow-inner">
-                    <p id="info-text" class="text-white leading-relaxed text-lg"></p>
+                <div id="info-box" class="bg-blue-900/40 p-6 rounded-xl border border-blue-300/30">
+                    <p id="info-text" class="text-white leading-relaxed"></p>
                 </div>
             </div>
             
             <div class="md:w-1/2 flex justify-center">
-                <div class="relative group">
-                    <img src="portada.jpg" alt="Portada del Libro" onerror="this.src='https://via.placeholder.com/400x600?text=Sube+aquí+el+archivo+portada.jpg'" class="w-full max-w-[400px] h-auto book-shadow border-4 border-white/20 transition-transform duration-500 group-hover:scale-105">
-                </div>
+                <img src="portada.jpg" alt="Portada del Libro" onerror="this.src='https://via.placeholder.com/350x500?text=portada.jpg'" class="w-full max-w-[380px] h-auto book-shadow border-4 border-white/20">
             </div>
-
         </div>
     </header>
 
+    <section id="descubrir" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Qué descubrirás en sus páginas?</h2>
+                <p class="text-xl text-gray-600">Este no es un libro teórico, es una guía de entrenamiento para que tu cerebro funcione a otro nivel.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-brain"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Mente Ágil</h3>
+                    <p class="text-gray-600">Aprende a procesar información compleja y tomar decisiones rápidas bajo presión.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-microchip"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">IA y Humano</h3>
+                    <p class="text-gray-600">Potencia lo que te hace único frente a las máquinas: creatividad, ética y pensamiento crítico.</p>
+                </div>
+
+                <div class="feature-card bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-rocket"></i></div>
+                    <h3 class="text-2xl font-bold mb-4">Resultados Reales</h3>
+                    <p class="text-gray-600">Métodos probados en el aula durante más de 28 años para mejorar tu rendimiento inmediato.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="etimologia" class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-blue-900 mb-8 border-l-8 border-blue-600 pl-4 uppercase tracking-tight">El Origen: Gymnos y la Honestidad Mental</h2>
-            <div class="prose prose-lg text-gray-700 max-w-none">
-                <p class="mb-6">
-                    La palabra <strong>gimnasio</strong> deriva del griego <em>gymnos</em> (desnudez). El <em>gymnasium</em> era el lugar donde se educaba a las personas "desnudas", simbolizando la necesidad de despojarse de prejuicios y viejos hábitos para permitir que el conocimiento nos transforme de manera pura.
-                </p>
-                <div class="bg-blue-50 p-8 rounded-3xl italic border-2 border-dashed border-blue-200 text-center text-xl text-blue-800 shadow-sm">
-                    "Imagina tu rutina diaria: por la mañana, gimnasio físico para tus músculos; por la tarde, gimnasio mental con este libro para entrenar tu cerebro."
-                </div>
+            <h2 class="text-3xl font-bold text-blue-900 mb-8 border-l-8 border-blue-600 pl-4 uppercase">El Origen: Gymnos</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                La palabra <strong>gimnasio</strong> deriva del griego <em>gymnos</em> (desnudez). El <em>gymnasium</em> era el lugar donde se educaba a las personas "desnudas", simbolizando la necesidad de despojarse de prejuicios para permitir que el conocimiento nos transforme.
+            </p>
+            <div class="bg-blue-600 text-white p-8 rounded-3xl shadow-xl text-center">
+                <p class="text-2xl italic">"Por la mañana, gimnasio físico; por la tarde, gimnasio mental para entrenar tu cerebro."</p>
             </div>
         </div>
     </section>
 
     <section id="autor" class="py-16 bg-gray-100">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
-            <img src="cara.jpg" alt="Gregorio Gómez" onerror="this.src='https://via.placeholder.com/200x200?text=Sube+aquí+cara.jpg'" class="rounded-full w-56 h-56 object-cover border-8 border-white shadow-2xl">
-            <div class="max-w-xl text-center md:text-left">
-                <h3 class="text-3xl font-bold mb-2 text-gray-900">Gregorio Gómez Pérez</h3>
-                <p class="text-blue-600 font-bold mb-4 uppercase tracking-widest text-sm italic">Ingeniero y Docente (28 años de experiencia)</p>
-                <p class="text-gray-700 text-lg leading-relaxed font-medium">
+            <img src="cara.jpg" alt="Gregorio Gómez" onerror="this.src='https://via.placeholder.com/200x200?text=cara.jpg'" class="rounded-full w-48 h-48 object-cover border-4 border-blue-600 shadow-xl">
+            <div class="max-w-xl">
+                <h3 class="text-3xl font-bold mb-2">Gregorio Gómez Pérez</h3>
+                <p class="text-blue-600 font-bold mb-4 uppercase text-sm tracking-widest">Ingeniero y Docente (28 años)</p>
+                <p class="text-gray-700 text-lg leading-relaxed">
                     Defensor del aula como el gimnasio mental donde entrenamos nuestros <strong>cerebros</strong> para los retos del mañana.
                 </p>
             </div>
@@ -94,25 +113,21 @@
 
     <section id="contacto" class="py-20 bg-blue-900 text-white text-center">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-10 text-yellow-500 italic">Poderes Para Aprender</h2>
-            <p class="text-xl mb-12 opacity-80 max-w-2xl mx-auto">¿Estás listo para empezar tu sesión de gimnasia mental? Contacta conmigo para conseguir tu ejemplar o agendar una charla.</p>
-            <a href="mailto:gregoriotecno@gmail.com" class="bg-yellow-500 text-blue-900 font-extrabold py-5 px-14 rounded-xl hover:bg-yellow-400 transition text-2xl inline-block shadow-2xl transform hover:scale-105">
-                <i class="fas fa-envelope mr-3"></i>Contactar con Gregorio
+            <h2 class="text-4xl font-bold mb-6 italic">Poderes Para Aprender</h2>
+            <p class="text-xl mb-10 opacity-80">Esta obra inaugura una tetralogía pensada para quienes creen que aprender es un camino que nunca termina.</p>
+            <a href="mailto:gregoriotecno@gmail.com" class="bg-yellow-500 text-blue-900 font-extrabold py-5 px-14 rounded-xl hover:bg-yellow-400 transition text-2xl inline-block">
+                Contactar con Gregorio
             </a>
-            <p class="mt-16 text-xs opacity-50 uppercase tracking-widest font-bold">ISBN: 979-13-7023-519-2 | Editorial Círculo Rojo</p>
+            <p class="mt-12 text-xs opacity-50">ISBN: 979-13-7023-519-2 | Editorial Círculo Rojo</p>
         </div>
     </section>
-
-    <footer class="bg-gray-900 text-gray-500 py-6 text-center text-xs">
-        <p>© 2026 Poderes Para Aprender - Gregorio Gómez Pérez</p>
-    </footer>
 
     <script>
         function showInfo(title, text) {
             const box = document.getElementById('info-box');
             const textElement = document.getElementById('info-text');
             box.style.display = 'block';
-            textElement.innerHTML = `<span class="font-black text-yellow-400 text-xl block mb-2 underline uppercase tracking-tighter">${title}</span> ${text}`;
+            textElement.innerHTML = `<span class="font-bold text-yellow-400 block mb-1 underline">${title.toUpperCase()}</span> ${text}`;
             box.scrollIntoView({behavior: 'smooth', block: 'center'});
         }
     </script>
