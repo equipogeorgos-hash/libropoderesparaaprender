@@ -9,8 +9,7 @@
     <style>
         .hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }
         .book-shadow { box-shadow: 25px 25px 60px rgba(0,0,0,0.5); border-radius: 8px; }
-        .info-card { transition: all 0.3s ease; border: 1px solid rgba(59, 130, 246, 0.2); }
-        .info-card:hover { transform: translateY(-5px); background: rgba(255, 255, 255, 0.1); }
+        .text-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(5px); }
     </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800">
@@ -19,8 +18,8 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <span class="text-2xl font-bold text-blue-700 italic">P.P.A.</span>
             <div class="space-x-6 font-medium text-gray-600">
-                <a href="#descubrir" class="hover:text-blue-600 transition">Descubrir</a>
-                <a href="#etimologia" class="hover:text-blue-600 transition">Historia</a>
+                <a href="#descubrir" class="hover:text-blue-600 transition">Contenido</a>
+                <a href="#tetralogia" class="hover:text-blue-600 transition">La Tetralogía</a>
                 <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-full hover:bg-blue-700 transition">Contacto</a>
             </div>
         </div>
@@ -30,31 +29,21 @@
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
             <div class="md:w-1/2">
                 <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Poderes Para Aprender: <br><span class="text-blue-200">Gimnasia para tu Cerebro</span>
+                    Poderes Para Aprender: <br><span class="text-blue-200 text-4xl">Gimnasia para tu Cerebro</span>
                 </h1>
-                <p class="text-2xl mb-10 opacity-90 leading-relaxed font-light">
-                    "El aprendizaje como una gimnasia para ejercitar la mente."
-                </p>
                 
-                <div class="grid grid-cols-1 gap-4">
-                    <div class="info-card p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
-                        <h3 class="text-yellow-400 font-bold uppercase tracking-widest mb-2"><i class="fas fa-layer-group mr-2"></i>La Tetralogía</h3>
-                        <p class="text-blue-50 leading-relaxed">
-                            Esta obra inaugura una tetralogía dedicada a transformar la educación mediante veinte efectos clave. Aquí se presentan los seis primeros. Las tres entregas siguientes completarán los catorce restantes.
-                        </p>
-                    </div>
-
-                    <div class="info-card p-6 rounded-2xl bg-white/5 backdrop-blur-sm">
-                        <h3 class="text-yellow-400 font-bold uppercase tracking-widest mb-2"><i class="fas fa-bolt mr-2"></i>Poderes y Estrategias</h3>
-                        <p class="text-blue-50 leading-relaxed">
-                            A través de seis estrategias clave (Concierto, Cine, Periodista, Tiempo, Tonto y Desayuno), este libro ofrece herramientas prácticas para fortalecer la inteligencia humana y pensar con mayor claridad.
-                        </p>
-                    </div>
+                <div class="text-card p-6 rounded-2xl mb-6">
+                    <p class="text-lg leading-relaxed mb-4">
+                        <strong>Poderes para aprender</strong> propone una metáfora poderosa: el aprendizaje como una gimnasia para ejercitar la mente. A través de seis estrategias clave, este primer libro ofrece herramientas prácticas para fortalecer la inteligencia humana, aprender mejor y pensar con mayor claridad.
+                    </p>
+                    <p class="text-lg leading-relaxed italic border-l-4 border-yellow-400 pl-4">
+                        En tiempos de inteligencia artificial, entrenar nuestra mente es más importante que nunca. No se trata de competir con la IA, sino de estar preparados para aprovecharla al máximo, desarrollando una inteligencia ágil, consciente y creativa.
+                    </p>
                 </div>
             </div>
             
             <div class="md:w-1/2 flex justify-center">
-                <img src="portada.jpg" alt="Portada del libro" onerror="this.src='https://via.placeholder.com/400x580?text=Sube+portada.jpg'" class="w-full max-w-[420px] h-auto book-shadow border-4 border-white/20 transform md:rotate-2">
+                <img src="portada.jpg" alt="Portada del Libro" onerror="this.src='https://via.placeholder.com/400x580?text=Sube+aquí+portada.jpg'" class="w-full max-w-[420px] h-auto book-shadow border-4 border-white/20 transform md:rotate-2">
             </div>
         </div>
     </header>
@@ -62,69 +51,67 @@
     <section id="descubrir" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-900 mb-4 italic">¿Qué descubrirás en sus páginas?</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Este no es un libro teórico, es una guía de entrenamiento para que tu cerebro funcione a otro nivel.</p>
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">¿Qué descubrirás en sus páginas?</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Este no es un libro teórico, es una guía de entrenamiento para que tu cerebro funcione a otro nivel.</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-gray-50 p-10 rounded-3xl shadow-sm border-t-8 border-blue-600">
-                    <i class="fas fa-brain text-4xl text-blue-600 mb-6"></i>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-sm border-t-8 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-brain"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Mente Ágil</h3>
-                    <p class="text-gray-700 leading-relaxed">Aprende a procesar información compleja y tomar decisiones rápidas bajo presión.</p>
+                    <p class="text-gray-700">Aprende a procesar información compleja y tomar decisiones rápidas bajo presión.</p>
                 </div>
-                <div class="bg-gray-50 p-10 rounded-3xl shadow-sm border-t-8 border-blue-600">
-                    <i class="fas fa-microchip text-4xl text-blue-600 mb-6"></i>
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-sm border-t-8 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-microchip"></i></div>
                     <h3 class="text-2xl font-bold mb-4">IA y Humano</h3>
-                    <p class="text-gray-700 leading-relaxed">Potencia lo que te hace único frente a las máquinas: creatividad, ética y pensamiento crítico.</p>
+                    <p class="text-gray-700">Potencia lo que te hace único frente a las máquinas: creatividad, ética y pensamiento crítico.</p>
                 </div>
-                <div class="bg-gray-50 p-10 rounded-3xl shadow-sm border-t-8 border-blue-600">
-                    <i class="fas fa-rocket text-4xl text-blue-600 mb-6"></i>
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-sm border-t-8 border-blue-600">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-rocket"></i></div>
                     <h3 class="text-2xl font-bold mb-4">Resultados Reales</h3>
-                    <p class="text-gray-700 leading-relaxed">Métodos probados en el aula durante más de 28 años para mejorar tu rendimiento inmediato.</p>
+                    <p class="text-gray-700">Métodos probados en el aula durante más de 28 años para mejorar tu rendimiento inmediato.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-blue-900 text-white">
-        <div class="container mx-auto px-6 max-w-4xl text-center">
-            <h2 class="text-3xl font-bold mb-8 uppercase tracking-widest">IA: No competir, sino aprovechar</h2>
-            <p class="text-2xl leading-relaxed font-light mb-10 italic">
-                "En tiempos de inteligencia artificial, entrenar nuestra mente es más importante que nunca. No se trata de competir con la IA, sino de aprovecharla al máximo desarrollando una inteligencia ágil, consciente y creativa."
-            </p>
-            <div class="h-1 w-24 bg-yellow-500 mx-auto"></div>
-        </div>
-    </section>
-
-    <section id="etimologia" class="py-20 bg-white">
+    <section id="tetralogia" class="py-20 bg-blue-50 text-gray-800">
         <div class="container mx-auto px-6 max-w-4xl">
-            <h2 class="text-3xl font-bold text-blue-900 mb-8 border-l-8 border-blue-600 pl-4 uppercase">El Origen: Gymnos</h2>
-            <p class="text-xl text-gray-700 leading-relaxed">
-                Derivado del griego <em>gymnos</em> (desnudez), el gimnasio era el lugar de la educación honesta y sin prejuicios. Presentarse ante el conocimiento "desnudo" de viejos hábitos es la clave de mi concepto de <strong>Gimnasia para tu Cerebro</strong>.
-            </p>
+            <h2 class="text-3xl font-bold text-blue-900 mb-8 border-l-8 border-blue-600 pl-4 uppercase">La Tetralogía</h2>
+            <div class="prose prose-xl max-w-none leading-relaxed">
+                <p class="mb-6">
+                    Esta obra inaugura una tetralogía dedicada a transformar la educación mediante veinte efectos clave. Aquí se presentan los seis primeros.
+                </p>
+                <p class="mb-6">
+                    Las tres entregas siguientes completarán los catorce efectos restantes, abordando el impacto en los centros educativos, los docentes y la sociedad. Una serie pensada para quienes creen que aprender es un camino que nunca termina.
+                </p>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-100 italic text-blue-800">
+                    Los 6 poderes iniciales: Concierto, Cine, Periodista, Tiempo, Tonto y Desayuno.
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="autor" class="py-16 bg-gray-100">
+    <section id="autor" class="py-16 bg-white">
         <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-12">
-            <img src="cara.jpg" alt="Gregorio Gómez Pérez" onerror="this.src='https://via.placeholder.com/250x250?text=Tu+Foto+Aquí'" class="rounded-full w-56 h-56 object-cover border-8 border-white shadow-2xl">
+            <img src="cara.jpg" alt="Gregorio Gómez Pérez" onerror="this.src='https://via.placeholder.com/250x250?text=Tu+Foto+Aquí'" class="rounded-full w-56 h-56 object-cover border-8 border-gray-100 shadow-2xl">
             <div class="max-w-xl text-center md:text-left">
                 <h3 class="text-3xl font-bold mb-2">Gregorio Gómez Pérez</h3>
-                <p class="text-blue-600 font-bold mb-4 uppercase text-sm tracking-widest">Ingeniero y Docente (28 años)</p>
-                <p class="text-gray-700 text-xl font-medium leading-relaxed italic">
-                    "Defensor del aula como el gimnasio mental donde entrenamos las <strong>neuronas</strong> para los retos del mañana."
+                <p class="text-blue-600 font-bold mb-4 uppercase text-sm tracking-widest italic">Ingeniero y Docente</p>
+                <p class="text-gray-700 text-xl font-medium leading-relaxed">
+                    "Defensor del aula como el gimnasio mental donde entrenamos nuestros <strong>cerebros</strong> para los retos del mañana."
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="py-20 bg-gray-900 text-white text-center">
+    <section id="contacto" class="py-20 bg-blue-900 text-white text-center">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-10 text-yellow-500 italic">Poderes Para Aprender</h2>
-            <a href="mailto:gregoriotecno@gmail.com" class="bg-blue-600 text-white font-extrabold py-5 px-16 rounded-2xl hover:bg-blue-700 transition text-2xl inline-block shadow-2xl">
+            <h2 class="text-4xl font-bold mb-8 italic text-yellow-500">Poderes Para Aprender</h2>
+            <a href="mailto:gregoriotecno@gmail.com" class="bg-yellow-500 text-blue-900 font-extrabold py-5 px-16 rounded-2xl hover:bg-yellow-400 transition text-2xl inline-block shadow-2xl transform hover:scale-105">
                 Contactar con Gregorio
             </a>
-            <p class="mt-16 text-xs opacity-40">ISBN: 979-13-7023-519-2 | Editorial Círculo Rojo</p>
+            <p class="mt-16 text-sm opacity-50">ISBN: 979-13-7023-519-2 | Editorial Círculo Rojo</p>
         </div>
     </section>
 
